@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="starsDataSet1" targetNamespace="http://tempuri.org/starsDataSet1.xsd" xmlns:mstns="http://tempuri.org/starsDataSet1.xsd" xmlns="http://tempuri.org/starsDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="starsConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="starsConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.starsInfo.Properties.Settings.GlobalReference.Default.starsConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="starFullInfoTableAdapter" GeneratorDataComponentClassName="starFullInfoTableAdapter" Name="starFullInfo" UserDataComponentName="starFullInfoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="starsConnectionString (Settings)" DbObjectName="stars.dbo.starFullInfo" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Идентификатор, Название, Расстояние, Радиус, Светимость, Класс FROM dbo.starFullInfo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Идентификатор" DataSetColumn="Идентификатор" />
+              <Mapping SourceColumn="Название" DataSetColumn="Название" />
+              <Mapping SourceColumn="Расстояние" DataSetColumn="Расстояние" />
+              <Mapping SourceColumn="Радиус" DataSetColumn="Радиус" />
+              <Mapping SourceColumn="Светимость" DataSetColumn="Светимость" />
+              <Mapping SourceColumn="Класс" DataSetColumn="Класс" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="starsDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="starsDataSet1" msprop:Generator_UserDSName="starsDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="starFullInfo" msprop:Generator_TableClassName="starFullInfoDataTable" msprop:Generator_TableVarName="tablestarFullInfo" msprop:Generator_TablePropName="starFullInfo" msprop:Generator_RowDeletingName="starFullInfoRowDeleting" msprop:Generator_RowChangingName="starFullInfoRowChanging" msprop:Generator_RowEvHandlerName="starFullInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="starFullInfoRowDeleted" msprop:Generator_UserTableName="starFullInfo" msprop:Generator_RowChangedName="starFullInfoRowChanged" msprop:Generator_RowEvArgName="starFullInfoRowChangeEvent" msprop:Generator_RowClassName="starFullInfoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Идентификатор" msprop:Generator_ColumnVarNameInTable="columnИдентификатор" msprop:Generator_ColumnPropNameInRow="Идентификатор" msprop:Generator_ColumnPropNameInTable="ИдентификаторColumn" msprop:Generator_UserColumnName="Идентификатор" type="xs:int" />
+              <xs:element name="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_UserColumnName="Название">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Расстояние" msprop:Generator_ColumnVarNameInTable="columnРасстояние" msprop:Generator_ColumnPropNameInRow="Расстояние" msprop:Generator_ColumnPropNameInTable="РасстояниеColumn" msprop:Generator_UserColumnName="Расстояние" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Радиус" msprop:Generator_ColumnVarNameInTable="columnРадиус" msprop:Generator_ColumnPropNameInRow="Радиус" msprop:Generator_ColumnPropNameInTable="РадиусColumn" msprop:Generator_UserColumnName="Радиус" type="xs:int" minOccurs="0" />
+              <xs:element name="Светимость" msprop:Generator_ColumnVarNameInTable="columnСветимость" msprop:Generator_ColumnPropNameInRow="Светимость" msprop:Generator_ColumnPropNameInTable="СветимостьColumn" msprop:Generator_UserColumnName="Светимость" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Класс" msprop:Generator_ColumnVarNameInTable="columnКласс" msprop:Generator_ColumnPropNameInRow="Класс" msprop:Generator_ColumnPropNameInTable="КлассColumn" msprop:Generator_UserColumnName="Класс">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:starFullInfo" />
+      <xs:field xpath="mstns:Идентификатор" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

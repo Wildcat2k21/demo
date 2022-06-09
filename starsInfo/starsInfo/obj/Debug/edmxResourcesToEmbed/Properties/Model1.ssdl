@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище starsModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="spectrum_class">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="class" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="temperature" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="stars_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="distance" Type="int" />
+    <Property Name="radius" Type="int" />
+    <Property Name="blind" Type="int" />
+    <Property Name="classId" Type="int" />
+    <Property Name="photo" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_stars_info_spectrum_class">
+    <End Role="spectrum_class" Type="Self.spectrum_class" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="stars_info" Type="Self.stars_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="spectrum_class">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="stars_info">
+        <PropertyRef Name="classId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище starsModelContainer">
+    <EntitySet Name="spectrum_class" EntityType="Self.spectrum_class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="stars_info" EntityType="Self.stars_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_stars_info_spectrum_class" Association="Self.FK_stars_info_spectrum_class">
+      <End Role="spectrum_class" EntitySet="spectrum_class" />
+      <End Role="stars_info" EntitySet="stars_info" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
